@@ -20,7 +20,7 @@ from uuid import uuid1
 import aiohttp
 import requests
 
-from kraken.exceptions import _get_exception
+from reinforcement.crypto.time_series.kraken_202406_ws.exceptions import _get_exception
 
 if TYPE_CHECKING:
     from collections.abc import Awaitable, Callable, Coroutine
