@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import TypeVar
 
-from kraken.base_api import FuturesClient, defined
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import FuturesClient, defined
 
 Self = TypeVar("Self")
 
@@ -38,7 +38,7 @@ class Trade(FuturesClient):
         :linenos:
         :caption: Futures Trade: Create the trade client
 
-        >>> from kraken.futures import Trade
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
         >>> trade = Trade() # unauthenticated
         >>> trade = Trade(key="api-key", secret="secret-key") # authenticated
 
@@ -46,7 +46,7 @@ class Trade(FuturesClient):
         :linenos:
         :caption: Futures Trade: Create the trade client as context manager
 
-        >>> from kraken.futures import Trade
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
         >>> with Trade(key="api-key", secret="secret-key") as trade:
         ...     print(trade.get_fills())
     """
@@ -89,7 +89,7 @@ class Trade(FuturesClient):
             :linenos:
             :caption: Futures Trade: Get the recent fills
 
-            >>> from kraken.futures import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.get_fills()
             {
@@ -145,7 +145,7 @@ class Trade(FuturesClient):
             :linenos:
             :caption: Futures Trade: Create a batch order
 
-            >>> from kraken.futures import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.create_batch_order(
             ...     batchorder_list=[
@@ -263,7 +263,7 @@ class Trade(FuturesClient):
             :linenos:
             :caption: Futures Trade: Cancel all open orders
 
-            >>> from kraken.futures import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.cancel_all_orders()
             {
@@ -321,7 +321,7 @@ class Trade(FuturesClient):
             :linenos:
             :caption: Futures Trade: Setup the Death man's Switch
 
-            >>> from kraken.futures import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.dead_mans_switch(timeout=60)
             {
@@ -371,7 +371,7 @@ class Trade(FuturesClient):
             :linenos:
             :caption: Futures Trade: Cancel an order
 
-            >>> from kraken.futures import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.cancel_order(order_id="fc589be9-5095-48f0-b6f1-a2dfad6d9677")
             {
@@ -441,7 +441,7 @@ class Trade(FuturesClient):
             :linenos:
             :caption: Futures Trade: Edit an open order
 
-            >>> from kraken.futures import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.edit_order(orderId="fc589be9-5095-48f0-b6f1-a2dfad6d9677", size=100)
             {
@@ -507,7 +507,7 @@ class Trade(FuturesClient):
             :linenos:
             :caption: Futures Trade: Get the order status
 
-            >>> from kraken.futures import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.get_orders_status(
             ...     orderIds=[
@@ -633,7 +633,7 @@ class Trade(FuturesClient):
             :linenos:
             :caption: Futures Trade: Create and submit a new limit order
 
-            >>> from kraken.futures import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.create_order(
             ...     orderType="lmt",

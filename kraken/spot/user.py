@@ -13,7 +13,7 @@ from __future__ import annotations
 from decimal import Decimal
 from typing import TypeVar
 
-from kraken.base_api import SpotClient, defined, ensure_string
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import SpotClient, defined, ensure_string
 
 Self = TypeVar("Self")
 
@@ -41,7 +41,7 @@ class User(SpotClient):
         :linenos:
         :caption: Spot User: Create the user client
 
-        >>> from kraken.spot import User
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
         >>> user = User() # unauthenticated
         >>> auth_user = User(key="api-key", secret="secret-key") # authenticated
 
@@ -49,7 +49,7 @@ class User(SpotClient):
         :linenos:
         :caption: Spot User: Create the user client as context manager
 
-        >>> from kraken.spot import User
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
         >>> with User(key="api-key", secret="secret-key") as user:
         ...     print(user.get_account_balances())
     """
@@ -83,7 +83,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get the account balances
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_account_balances()
             {
@@ -124,7 +124,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get balances
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_balances()
             {
@@ -166,7 +166,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get balance
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_balance(currency="EUR")
             {
@@ -214,7 +214,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get the trade balance
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_trade_balance()
             {
@@ -264,7 +264,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get the open orders
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_open_orders()
             {
@@ -351,7 +351,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get the closed orders
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_closed_orders()
             {
@@ -441,7 +441,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get order information
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_orders_info(txid="OG5IL4-6AR7I-ZAPZEZ")
             {
@@ -563,7 +563,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get the trade history
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_trades_history()
             {
@@ -637,7 +637,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get the historical trade information
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_trades_info(txid="TNGMNU-XQSRA-LKCWOK")
             {
@@ -702,7 +702,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get the open margin positions
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_open_positions()
             {
@@ -777,7 +777,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get ledgers info
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_ledgers_info(asset=["KFEE","EUR","ETH"])
             {
@@ -840,7 +840,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get ledgers
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_ledgers(id_="LKLSX7-VUXD4-HDLK2P")
             {
@@ -889,7 +889,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Get the 30-day trade volume
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_trade_volume()
             {
@@ -978,7 +978,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Request an report export
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.request_export_report(
             ...     report="ledgers", description="myLedgers1", format="CSV"
@@ -1031,7 +1031,7 @@ class User(SpotClient):
             :linenos:
             :caption: Example
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> response = user.request_export_report(
             ...     report="ledgers", description="myLedgers1", format="CSV"
@@ -1097,7 +1097,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Save the exported report to CSV
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> response = user.request_export_report(
             ...     report="ledgers", description="myLedgers1", format="CSV"
@@ -1148,7 +1148,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Delete or cancel the report
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.delete_export_report(id_="GEHI", type_="delete")
             { 'delete': True }
@@ -1184,7 +1184,7 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Create a subaccount
 
-            >>> from kraken.spot import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.create_subaccount(username="user", email="user@domain.com")
             { 'result': True }
@@ -1227,9 +1227,9 @@ class User(SpotClient):
             :linenos:
             :caption: Spot User: Transfer funds between accounts
 
-            >>> from kraken.spot import User
-            >>> user = User(key="api-key", secret="secret-key")
-            >>> user.account_transfer(
+                    from reinforcement.crypto.time_series.kraken_202406_ws.spot import User
+                    user = User(key="api-key", secret="secret-key")
+                    user.account_transfer(
             ...     "asset": "XBT",
             ...     "amount": 1.0,
             ...     "from": "ABCD 1234 EFGH 5678"

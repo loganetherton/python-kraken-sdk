@@ -5,12 +5,12 @@
 
 """This module provides the Kraken Futures clients"""
 
-from kraken.base_api import FuturesAsyncClient
-from kraken.futures.funding import Funding
-from kraken.futures.market import Market
-from kraken.futures.trade import Trade
-from kraken.futures.user import User
-from kraken.futures.ws_client import FuturesWSClient
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import FuturesAsyncClient
+from reinforcement.crypto.time_series.kraken_202406_ws.futures.funding import Funding
+from reinforcement.crypto.time_series.kraken_202406_ws.futures.market import Market
+from reinforcement.crypto.time_series.kraken_202406_ws.futures.trade import Trade
+from reinforcement.crypto.time_series.kraken_202406_ws.futures.user import User
+from reinforcement.crypto.time_series.kraken_202406_ws.futures.ws_client import FuturesWSClient
 
 __all__ = [
     "Funding",

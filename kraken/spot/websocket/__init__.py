@@ -13,8 +13,8 @@ import logging
 from asyncio import sleep as async_sleep
 from typing import TYPE_CHECKING, Any, TypeVar
 
-from kraken.spot import SpotAsyncClient
-from kraken.spot.websocket.connectors import ConnectSpotWebsocket
+from reinforcement.crypto.time_series.kraken_202406_ws.spot import SpotAsyncClient
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.websocket.connectors import ConnectSpotWebsocket
 
 if TYPE_CHECKING:
     from collections.abc import Callable

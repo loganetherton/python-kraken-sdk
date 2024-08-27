@@ -24,12 +24,12 @@ from typing import TYPE_CHECKING, Any, Final
 
 import websockets
 
-from kraken.exceptions import MaxReconnectError
+from reinforcement.crypto.time_series.kraken_202406_ws.exceptions import MaxReconnectError
 
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-    from kraken.spot.websocket import SpotWSClientBase
+    from reinforcement.crypto.time_series.kraken_202406_ws.spot.websocket import SpotWSClientBase
 
 
 class ConnectSpotWebsocketBase:  # pylint: disable=too-many-instance-attributes

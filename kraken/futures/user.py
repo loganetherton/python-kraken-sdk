@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, TypeVar
 
-from kraken.base_api import FuturesClient, defined
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import FuturesClient, defined
 
 if TYPE_CHECKING:
     import requests
@@ -41,7 +41,7 @@ class User(FuturesClient):
         :linenos:
         :caption: Futures User: Create the user client
 
-        >>> from kraken.futures import User
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
         >>> user = User() # unauthenticated
         >>> user = User(key="api-key", secret="secret-key") # authenticated
 
@@ -49,7 +49,7 @@ class User(FuturesClient):
         :linenos:
         :caption: Futures User: Create the user client as context manager
 
-        >>> from kraken.futures import User
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
         >>> with User(key="api-key", secret="secret-key") as user:
         ...     print(user.get_wallets())
     """
@@ -89,7 +89,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the user's wallets
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_wallets()
             {
@@ -183,7 +183,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the user's subaccounts
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_subaccounts()
             {
@@ -221,7 +221,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the user's unwind queue
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_unwind_queue()
             {
@@ -259,7 +259,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the latest notifications
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_notifications()
             {
@@ -322,7 +322,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the user's account log
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_account_log(before="2023-04-04T16:10:46.260Z", count=1)
             {
@@ -396,7 +396,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the account log and export as CSV
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> response = user.get_account_log_csv()
             >>> with open(f"account_log.csv", "wb") as file:
@@ -507,7 +507,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the user's historical execution events
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_execution_events(
             ...    tradeable="PF_SOLUSD",
@@ -634,7 +634,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the user's historical order events
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_order_events(tradeable="PF_SOLUSD", since=1668989233, before=1668999999, sort="asc")
             {
@@ -715,7 +715,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the user's historical trigger events
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_trigger_events(
             ...     tradeable="PF_SOLUSD",
@@ -791,7 +791,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get the user's open positions
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_open_positions()
             {
@@ -836,7 +836,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Get open orders
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.get_open_orders()
             {
@@ -930,7 +930,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Check if trading is enabled on a subaccount
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.set_trading_on_subaccount(
             ...    subaccountUid="778387bh61b-f990-4128-16a7-f4ab669a9b",
@@ -971,7 +971,7 @@ class User(FuturesClient):
             :linenos:
             :caption: Futures User: Dis-/Enable trading on a subaccount
 
-            >>> from kraken.futures import User
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import User
             >>> user = User(key="api-key", secret="secret-key")
             >>> user.set_trading_on_subaccount(
             ...    subaccountUid="778387bh61b-f990-4128-16a7-f4ab669a9b",

@@ -125,7 +125,7 @@ def cli(ctx: Context, **kwargs: dict) -> None:
 @pass_context
 def spot(ctx: Context, url: str, **kwargs: dict) -> None:  # noqa: ARG001
     """Access the Kraken Spot REST API"""
-    from kraken.base_api import SpotClient  # noqa: PLC0415
+    from reinforcement.crypto.time_series.kraken_202406_ws.base_api import SpotClient  # noqa: PLC0415
 
     logging.debug("Initialize the Kraken client")
     client = SpotClient(
@@ -201,7 +201,7 @@ def spot(ctx: Context, url: str, **kwargs: dict) -> None:  # noqa: ARG001
 @pass_context
 def futures(ctx: Context, url: str, **kwargs: dict) -> None:  # noqa: ARG001
     """Access the Kraken Futures REST API"""
-    from kraken.base_api import FuturesClient  # noqa: PLC0415
+    from reinforcement.crypto.time_series.kraken_202406_ws.base_api import FuturesClient  # noqa: PLC0415
 
     logging.debug("Initialize the Kraken client")
     client = FuturesClient(

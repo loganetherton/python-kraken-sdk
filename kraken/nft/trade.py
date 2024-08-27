@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from typing import TypeVar
 
-from kraken.base_api import NFTClient, defined
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import NFTClient, defined
 
 Self = TypeVar("Self")
 
@@ -32,7 +32,7 @@ class Trade(NFTClient):
         :linenos:
         :caption: NFT Trade: Create the Trade client
 
-        >>> from kraken.nft import Trade
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
         >>> trade = Trade() # unauthenticated
         >>> auth_trade = Trade(key="api-key", secret="secret-key") # authenticated
 
@@ -40,7 +40,7 @@ class Trade(NFTClient):
         :linenos:
         :caption: NFT Trade:
 
-        >>> from kraken.nft import Trade
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
         >>> with Trade(key="api-key", secret="secret-key") as trade:
         ...     print(trade.)
     """
@@ -94,7 +94,7 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: Create Auction
 
-            >>> from kraken.nft import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
             >>> trade = Trade()
             >>> trade.create_auction(
             ...     auction_currency="ETH",
@@ -154,7 +154,7 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: Create Auction
 
-            >>> from kraken.nft import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
             >>> trade = Trade()
             >>> trade.modify_auction(
             ...     auction_id="AT2POJ-4CH3O-4TH6JH",ask_price="0.3",
@@ -197,7 +197,7 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: Cancel Auction
 
-            >>> from kraken.nft import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
             >>> trade = Trade()
             >>> trade.cancel_auction(auction_ids=["AT2POJ-4CH3O-4TH6JH"])
         """
@@ -247,7 +247,7 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: Create Offer
 
-            >>> from kraken.nft import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
             >>> trade = Trade()
             >>> trade.place_offer(
             ...     nft_id=["AT2POJ-4CH3O-4TH6JH"],
@@ -306,7 +306,7 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: Create Counter Offer
 
-            >>> from kraken.nft import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
             >>> trade = Trade()
             >>> trade.counter_offer(
             ...    currency="MATIC",
@@ -353,9 +353,9 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: Create Counter Offer
 
-            >>> from kraken.nft import Trade
-            >>> trade = Trade()
-            >>> trade.accept_offer(offer_id="ONQYPLG-OFARL-35RBGO)
+                    from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
+                    trade = Trade()
+                    trade.accept_offer(offer_id="ONQYPLG-OFARL-35RBGO)
         """
         params: dict = {"offer_id": offer_id}
         if defined(otp):
@@ -399,9 +399,9 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: Get Auction trades
 
-            >>> from kraken.nft import Trade
-            >>> trade = Trade()
-            >>> trade.get_auction_trades()
+                    from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
+                    trade = Trade()
+                    trade.get_auction_trades()
         """
         params: dict = {}
         if defined(auction_id):
@@ -474,9 +474,9 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: Get User Offers
 
-            >>> from kraken.nft import Trade
-            >>> trade = Trade()
-            >>> trade.get_user_offers(
+                    from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
+                    trade = Trade()
+                    trade.get_user_offers(
             ...     pos=1,
             ...     scope="placed",
             ...     sort="asc",
@@ -571,9 +571,9 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: Get NFT Wallets
 
-            >>> from kraken.nft import Trade
-            >>> trade = Trade()
-            >>> trade.get_nft_wallet()
+                    from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
+                    trade = Trade()
+                    trade.get_nft_wallet()
         """
         params: dict = {
             "page": page,
@@ -648,9 +648,9 @@ class Trade(NFTClient):
             :linenos:
             :caption: NFT Trade: List NFT Transactions
 
-            >>> from kraken.nft import Trade
-            >>> trade = Trade()
-            >>> trade.list_nft_transactions()
+                    from reinforcement.crypto.time_series.kraken_202406_ws.nft import Trade
+                    trade = Trade()
+                    trade.list_nft_transactions()
 
         """
         params: dict = {

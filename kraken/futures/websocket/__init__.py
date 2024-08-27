@@ -18,12 +18,12 @@ from typing import TYPE_CHECKING, Any
 
 import websockets
 
-from kraken.exceptions import MaxReconnectError
+from reinforcement.crypto.time_series.kraken_202406_ws.exceptions import MaxReconnectError
 
 if TYPE_CHECKING:
     from collections.abc import Callable
 
-    from kraken.futures import FuturesWSClient
+    from reinforcement.crypto.time_series.kraken_202406_ws.futures import FuturesWSClient
 
 
 class ConnectFuturesWebsocket:  # pylint: disable=too-many-instance-attributes

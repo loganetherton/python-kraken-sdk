@@ -12,8 +12,8 @@ from functools import lru_cache
 from math import floor
 from typing import TypeVar
 
-from kraken.base_api import SpotClient, defined, ensure_string
-from kraken.spot.market import Market
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import SpotClient, defined, ensure_string
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.market import Market
 
 Self = TypeVar("Self")
 
@@ -37,7 +37,7 @@ class Trade(SpotClient):
         :linenos:
         :caption: Spot Trade: Create the trade client
 
-        >>> from kraken.spot import Trade
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
         >>> trade = Trade() # unauthenticated
         >>> auth_trade = Trade(key="api-key", secret="secret-key") # authenticated
 
@@ -45,7 +45,7 @@ class Trade(SpotClient):
         :linenos:
         :caption: Spot Trade: Create the trade client as context manager
 
-        >>> from kraken.spot import Trade
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
         >>> with Trade(key="api-key", secret="secret-key") as trade:
         ...     print(trade.create_order(...))
 
@@ -186,7 +186,7 @@ class Trade(SpotClient):
             :linenos:
             :caption: Spot Trade: Create a market order
 
-            >>> from kraken.spot import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.create_order(
             ...     ordertype="market",
@@ -205,7 +205,7 @@ class Trade(SpotClient):
             :linenos:
             :caption: Spot Trade: Create limit order
 
-            >>> from kraken.spot import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.create_order(
             ...     ordertype="limit",
@@ -228,7 +228,7 @@ class Trade(SpotClient):
             :linenos:
             :caption: Spot Trade: Create a stop loss order
 
-            >>> from kraken.spot import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.create_order(
             ...     ordertype="stop-loss",
@@ -256,7 +256,7 @@ class Trade(SpotClient):
                3. When the price hits $27000 a limit order will be placed at
                   $26800 to sell 1.2 BTC. This ensures that the asset will be
                   sold for $26800 or better.
-            ''' >>> from kraken.spot import Trade >>> trade =
+            ''' >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade >>> trade =
             Trade(key="api-key", secret="secret-key") >>> from datetime import
             datetime, timedelta, timezone >>> deadline = ( ...
             datetime.now(timezone.utc) + timedelta(seconds=20) ... ).isoformat()
@@ -397,7 +397,7 @@ class Trade(SpotClient):
             :linenos:
             :caption: Spot Trade: Create a batch order
 
-            >>> from kraken.spot import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.create_order_batch(orders=[
             ...         {
@@ -503,7 +503,7 @@ class Trade(SpotClient):
             :linenos:
             :caption: Spot Trade: Modify an order
 
-            >>> from kraken.spot import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.edit_order(txid="OBGFYP-XVQNL-P4GMWF",
             ...     volume=0.75,
@@ -577,7 +577,7 @@ class Trade(SpotClient):
             :linenos:
             :caption: Spot Trade: Cancel an order
 
-            >>> from kraken.spot import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.cancel_order(txid="OAUHYR-YCVK6-P22G6P")
             { 'count': 1 }
@@ -609,7 +609,7 @@ class Trade(SpotClient):
             :linenos:
             :caption: Spot Trade: Cancel all open orders
 
-            >>> from kraken.spot import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.cancel_all_orders()
             { 'count': 2 }
@@ -643,7 +643,7 @@ class Trade(SpotClient):
             :linenos:
             :caption: Spot Trade: Set the Death Man's Switch
 
-            >>> from kraken.spot import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.cancel_all_orders_after_x(timeout=60)
             {
@@ -681,7 +681,7 @@ class Trade(SpotClient):
             :linenos:
             :caption: Spot Trade: Cancel multiple orders
 
-            >>> from kraken.spot import Trade
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Trade
             >>> trade = Trade(key="api-key", secret="secret-key")
             >>> trade.cancel_order_batch(
             ...     orders=["OG5IL4-6AR7I-ZAPZEZ", "OAUHYR-YCVK6-P22G6P"]

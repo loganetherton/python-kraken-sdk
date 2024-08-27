@@ -4,6 +4,6 @@
 
 """Module providing utility functions."""
 
-from kraken.utils.utils import deprecated
+from reinforcement.crypto.time_series.kraken_202406_ws.utils.utils import deprecated
 
 __all__ = ["deprecated"]

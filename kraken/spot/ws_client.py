@@ -14,9 +14,9 @@ import asyncio
 import json
 from typing import TYPE_CHECKING, Any
 
-from kraken.base_api import defined
-from kraken.exceptions import KrakenAuthenticationError
-from kraken.spot.websocket import SpotWSClientBase
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import defined
+from reinforcement.crypto.time_series.kraken_202406_ws.exceptions import KrakenAuthenticationError
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.websocket import SpotWSClientBase
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -60,7 +60,7 @@ class SpotWSClient(SpotWSClientBase):
         :caption: HowTo: Use the Kraken Spot websocket client
 
         import asyncio
-        from kraken.spot import SpotWSClient
+        from reinforcement.crypto.time_series.kraken_202406_ws.spot import SpotWSClient
 
 
         class Client(SpotWSClient):
@@ -99,7 +99,7 @@ class SpotWSClient(SpotWSClientBase):
         :caption: HowTo: Use the websocket client as instance
 
         import asyncio
-        from kraken.spot import SpotWSClient
+        from reinforcement.crypto.time_series.kraken_202406_ws.spot import SpotWSClient
 
 
         async def on_message(message):
@@ -129,7 +129,7 @@ class SpotWSClient(SpotWSClientBase):
         :caption: HowTo: Use the websocket client as context manager
 
         import asyncio
-        from kraken.spot import SpotWSClient
+        from reinforcement.crypto.time_series.kraken_202406_ws.spot import SpotWSClient
 
         async def on_message(message):
             print(message)
@@ -210,7 +210,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Place a new order
 
-            >>> await client_auth.send_message(
+                    await client_auth.send_message(
             ...     message={
             ...         "method": "add_order",
             ...         "params": {
@@ -232,7 +232,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Placing orders as batch
 
-            >>> await client_auth.send_message(
+                    await client_auth.send_message(
             ...     message={
             ...         "method": "batch_add",
             ...         "params": {
@@ -267,7 +267,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Cancel orders as batch
 
-            >>> await client_auth.send_message(
+                    await client_auth.send_message(
             ...     message={
             ...         "method": "batch_cancel",
             ...         "params": {
@@ -288,7 +288,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Cancel all orders
 
-            >>> await client_auth.send_message(
+                    await client_auth.send_message(
             ...     message={
             ...         "method": "cancel_all",
             ...     }
@@ -304,7 +304,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Death Man's Switch / cancel_all_orders_after
 
-            >>> await client_auth.send_message(
+                    await client_auth.send_message(
             ...     message={
             ...         "method": "cancel_all_orders_after",
             ...         "params": {"timeout": 60},
@@ -318,7 +318,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Cancel order(s)
 
-            >>> await client_auth.send_message(
+                    await client_auth.send_message(
             ...     message={
             ...         "method": "cancel_order",
             ...         "params": {
@@ -334,7 +334,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Cancel order(s)
 
-            >>> await client_auth.send_message(
+                    await client_auth.send_message(
             ...     message={
             ...         "method": "edit_order",
             ...         "params": {
@@ -353,7 +353,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Subscribe to a websocket feed
 
-            >>> await client.send_message(
+                    await client.send_message(
             ...     message={
             ...         "method": "subscribe",
             ...         "params": {"channel": "book", "snapshot": False, "symbol": ["BTC/USD"]},
@@ -457,7 +457,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Subscribe to a websocket feed
 
-            >>> await client.subscribe(
+                    await client.subscribe(
             ...     params={"channel": "ticker", "symbol": ["BTC/USD"]}
             ... )
 
@@ -497,7 +497,7 @@ class SpotWSClient(SpotWSClientBase):
             :linenos:
             :caption: Spot Websocket: Unsubscribe from a websocket feed
 
-            >>> await client.unsubscribe(
+                    await client.unsubscribe(
             ...     params={"channel": "ticker", "symbol": ["BTC/USD"]}
             ... )
         """
@@ -545,7 +545,7 @@ class SpotWSClient(SpotWSClientBase):
         :return: List of available private channel names
         :rtype: list[str]
         """
-        return ["executions", "balances"]
+        return ["executions", "balances", "level3"]
 
     @property
     def private_methods(self: SpotWSClient) -> list[str]:

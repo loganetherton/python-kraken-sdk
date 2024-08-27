@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from typing import TypeVar
 
-from kraken.base_api import NFTClient, defined
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import NFTClient, defined
 
 Self = TypeVar("Self")
 
@@ -34,7 +34,7 @@ class Market(NFTClient):
         :linenos:
         :caption: NFT Market: Create the market client
 
-        >>> from kraken.nft import Market
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
         >>> market = Market() # unauthenticated
         >>> auth_market = Market(key="api-key", secret="secret-key") # authenticated
 
@@ -42,7 +42,7 @@ class Market(NFTClient):
         :linenos:
         :caption: NFT Market: List Blockchains
 
-        >>> from kraken.nft import Market
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
         >>> with Market() as market:
         ...     print(market.list_blockchains())
     """
@@ -81,7 +81,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: Get a specific NFT
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.get_nft(nft_id="NT4GUCU-SIJE2-YSQQG2")
             {
@@ -143,7 +143,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: List and filter available NFTs
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.list_nfts(
             ...     page_size=1,
@@ -193,7 +193,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: Get historical NFT ownership
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.list_nfts(
             ...     nft_id="NT4GUCU-SIJE2-YSQQG2",
@@ -235,7 +235,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: Get NFT Collection
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.get_collection(
             ...     collection_id="NCQNABO-XYCA7-JMMSDF", currency="USD"
@@ -283,7 +283,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: List NFT Collections
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.list_collections(
             ...         page_size=1,
@@ -327,7 +327,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: Get Creator
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.get_creator(creator_id="NA7NELE-FOQFZ-ODWOTV")
         """
@@ -369,7 +369,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: Get Creators
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.list_creators(
             ...         page_size=1,
@@ -409,7 +409,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: List Blockchains
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.list_blockchains()
         """
@@ -441,7 +441,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: Get Auctions
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.get_auctions(
             ...     status="open"
@@ -478,7 +478,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: Get Offers
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.get_offers(nft_id="NT4GUCU-SIJE2-YSQQG2")
         """
@@ -511,7 +511,7 @@ class Market(NFTClient):
             :linenos:
             :caption: NFT Market: Get Quotes
 
-            >>> from kraken.nft import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.nft import Market
             >>> market = Market()
             >>> market.get_nft_quotes(
             ...     filter_="nft_id[]=NT4GUCU-SIJE2-YSQQG2",

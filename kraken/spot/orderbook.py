@@ -18,8 +18,8 @@ from collections import OrderedDict
 from inspect import iscoroutinefunction
 from typing import TYPE_CHECKING
 
-from kraken.spot import Market
-from kraken.spot.ws_client import SpotWSClient
+from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.ws_client import SpotWSClient
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -54,7 +54,7 @@ class SpotOrderBookClient(SpotWSClient):
         :caption: Example: Create and maintain a Spot orderbook as custom class
 
         from typing import Any
-        from kraken.spot import SpotOrderBookClient
+        from reinforcement.crypto.time_series.kraken_202406_ws.spot import SpotOrderBookClient
         import asyncio
 
         class OrderBook(SpotOrderBookClient):
@@ -96,7 +96,7 @@ class SpotOrderBookClient(SpotWSClient):
         :caption: Example: Create and maintain a Spot orderbook using a callback
 
         from typing import Any
-        from kraken.spot import SpotOrderBookClient
+        from reinforcement.crypto.time_series.kraken_202406_ws.spot import SpotOrderBookClient
         import asyncio
 
         async def my_callback(self: "OrderBook", pair: str, message: dict) -> None:

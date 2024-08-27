@@ -5,14 +5,14 @@
 
 """Module that provides the Spot REST clients."""
 
-from kraken.base_api import SpotAsyncClient, SpotClient
-from kraken.spot.earn import Earn
-from kraken.spot.funding import Funding
-from kraken.spot.market import Market
-from kraken.spot.orderbook import SpotOrderBookClient
-from kraken.spot.trade import Trade
-from kraken.spot.user import User
-from kraken.spot.ws_client import SpotWSClient
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import SpotAsyncClient, SpotClient
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.earn import Earn
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.funding import Funding
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.market import Market
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.orderbook import SpotOrderBookClient
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.trade import Trade
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.user import User
+from reinforcement.crypto.time_series.kraken_202406_ws.spot.ws_client import SpotWSClient
 
 __all__ = [
     "Earn",

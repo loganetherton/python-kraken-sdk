@@ -10,7 +10,7 @@ from __future__ import annotations
 from functools import lru_cache
 from typing import TypeVar
 
-from kraken.base_api import SpotClient, defined, ensure_string
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import SpotClient, defined, ensure_string
 
 Self = TypeVar("Self")
 
@@ -36,7 +36,7 @@ class Market(SpotClient):
         :linenos:
         :caption: Spot Market: Create the market client
 
-        >>> from kraken.spot import Market
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
         >>> market = Market() # unauthenticated
         >>> auth_market = Market(key="api-key", secret="secret-key") # authenticated
 
@@ -44,7 +44,7 @@ class Market(SpotClient):
         :linenos:
         :caption: Spot Market: Create the market client as context manager
 
-        >>> from kraken.spot import Market
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
         >>> with Market() as market:
         ...     print(market.get_assets())
     """
@@ -91,7 +91,7 @@ class Market(SpotClient):
             :linenos:
             :caption: Spot Market: Get information about the available assets
 
-            >>> from kraken.spot import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
             >>> market = Market()
             >>> market.get_assets(assets="DOT")
             {
@@ -168,7 +168,7 @@ class Market(SpotClient):
             :linenos:
             :caption: Spot Market: Get information about tradeable asset pairs
 
-            >>> from kraken.spot import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
             >>> Market().get_asset_pairs(pair="XBTUSD")
             {
                 'XXBTZUSD': {
@@ -243,7 +243,7 @@ class Market(SpotClient):
             :linenos:
             :caption: Spot Market: Get the ticker(s)
 
-            >>> from kraken.spot import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
             >>> Market().get_ticker(pair="XBTUSD")
             {
                 'XXBTZUSD': {
@@ -297,7 +297,7 @@ class Market(SpotClient):
             :linenos:
             :caption: Spot Market: Get the OHLC data
 
-            >>> from kraken.spot import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
             >>> Market().get_ohlc(pair="XBTUSD")
             {
                 "XXBTZUSD": [
@@ -350,7 +350,7 @@ class Market(SpotClient):
             :linenos:
             :caption: Spot Market: Get the orderbook
 
-            >>> from kraken.spot import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
             >>> Market().get_order_book(pair="XBTUSD", count=2)
             {
                 'XXBTZUSD': {
@@ -399,7 +399,7 @@ class Market(SpotClient):
             :linenos:
             :caption: Spot Market: Get the recent trades
 
-            >>> from kraken.spot import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
             >>> Market().get_recent_trades(pair="XBTUSD")
             {
                 "XXBTZUSD": [
@@ -447,7 +447,7 @@ class Market(SpotClient):
             :linenos:
             :caption: Spot Market: Get the recent spreads
 
-            >>> from kraken.spot import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
             >>> Market().get_recent_spreads(pair="XBTUSD")
             {
                 "XXBTZUSD": [
@@ -486,7 +486,7 @@ class Market(SpotClient):
             :linenos:
             :caption: Spot Market: Get the Kraken API system status
 
-            >>> from kraken.spot import Market
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Market
             >>> Market().get_system_status()
             {'status': 'online', 'timestamp': '2023-04-05T17:12:31Z'}
         """

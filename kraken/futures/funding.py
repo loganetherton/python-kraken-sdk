@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from typing import TypeVar
 
-from kraken.base_api import FuturesClient
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import FuturesClient
 
 Self = TypeVar("Self")
 
@@ -37,7 +37,7 @@ class Funding(FuturesClient):
         :linenos:
         :caption: Futures Funding: Create the funding client
 
-        >>> from kraken.futures import Funding
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Funding
         >>> funding = Funding() # unauthenticated
         >>> funding = Funding(key="api-key", secret="secret-key") # authenticated
 
@@ -45,7 +45,7 @@ class Funding(FuturesClient):
         :linenos:
         :caption: Futures Funding: Create the funding client as context manager
 
-        >>> from kraken.futures import Funding
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Funding
         >>> with Funding(key="api-key", secret="secret-key") as funding:
         ...     print(funding.get_historical_funding_rates(symbol="PI_XBTUSD"))
     """
@@ -86,7 +86,7 @@ class Funding(FuturesClient):
             :linenos:
             :caption: Futures Funding: Get the historical funding rates
 
-            >>> from kraken.futures import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Funding
             >>> Funding().get_historical_funding_rates(symbol="PI_XBTUSD")
             {
                 'rates': [
@@ -141,7 +141,7 @@ class Funding(FuturesClient):
             :linenos:
             :caption: Futures Funding: Transfer funds between wallets
 
-            >>> from kraken.futures import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.initiate_wallet_transfer(
             ...     amount='100',
@@ -201,7 +201,7 @@ class Funding(FuturesClient):
             :linenos:
             :caption: Futures Funding: Transfer funds between subaccounts
 
-            >>> from kraken.futures import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.initiate_subaccount_transfer(
             ...     amount='2',
@@ -256,7 +256,7 @@ class Funding(FuturesClient):
             :linenos:
             :caption: Futures Funding: Transfer funds between Spot and Futures wallets
 
-            >>> from kraken.futures import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.futures import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.initiate_withdrawal_to_spot_wallet(
             ...     amount=100,

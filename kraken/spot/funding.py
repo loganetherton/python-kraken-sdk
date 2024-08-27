@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import TypeVar
 
-from kraken.base_api import SpotClient, defined
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import SpotClient, defined
 
 Self = TypeVar("Self")
 
@@ -35,7 +35,7 @@ class Funding(SpotClient):
         :linenos:
         :caption: Spot Funding: Create the funding client
 
-        >>> from kraken.spot import Funding
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
         >>> funding = Funding() # unauthenticated
         >>> auth_funding = Funding(key="api-key", secret="secret-key") # authenticated
 
@@ -43,7 +43,7 @@ class Funding(SpotClient):
         :linenos:
         :caption: Spot Funding: Create the funding client as context manager
 
-        >>> from kraken.spot import Funding
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
         >>> with Funding(key="api-key", secret="secret-key") as funding:
         ...     print(funding.get_deposit_methods(asset="XLM"))
     """
@@ -81,7 +81,7 @@ class Funding(SpotClient):
             :linenos:
             :caption: Spot Funding: Get the available deposit methods
 
-            >>> from kraken.spot import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.get_deposit_methods(asset="XLM")
             [
@@ -132,7 +132,7 @@ class Funding(SpotClient):
             :linenos:
             :caption: Spot Funding: Get the available deposit addresses
 
-            >>> from kraken.spot import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.get_deposit_address(asset="XLM", method="Stellar XLM")
             [
@@ -192,7 +192,7 @@ class Funding(SpotClient):
             :linenos:
             :caption: Spot Funding: Get the recent deposit status
 
-            >>> from kraken.spot import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.get_recent_deposits_status()
             [
@@ -281,7 +281,7 @@ class Funding(SpotClient):
             :linenos:
             :caption: Spot Funding: Get withdrawal information
 
-            >>> from kraken.spot import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.get_withdrawal_info(
             ...     asset="DOT",
@@ -335,7 +335,7 @@ class Funding(SpotClient):
             :linenos:
             :caption: Spot Funding: Withdraw Funds
 
-            >>> from kraken.spot import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.withdraw_funds(
             ...    asset="DOT",
@@ -389,7 +389,7 @@ class Funding(SpotClient):
             :linenos:
             :caption: Get the recent withdraw status
 
-            >>> from kraken.spot import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.get_recent_withdraw_status()
             [
@@ -451,7 +451,7 @@ class Funding(SpotClient):
             :linenos:
             :caption: Spot Funding: Cancel Withdraw
 
-            >>> from kraken.spot import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.cancel_withdraw(asset="DOT", refid="I7KGS6-UFMTTQ-AGBSO6T")
             { 'result': True }
@@ -494,7 +494,7 @@ class Funding(SpotClient):
             :linenos:
             :caption: Spot Funding: Wallet Transfer
 
-            >>> from kraken.spot import Funding
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Funding
             >>> funding = Funding(key="api-key", secret="secret-key")
             >>> funding.wallet_transfer(
             ...     asset="XBT",

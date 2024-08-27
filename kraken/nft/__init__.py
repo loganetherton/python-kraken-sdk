@@ -5,8 +5,8 @@
 
 """This module provides the Kraken NFT clients"""
 
-from kraken.nft.market import Market
-from kraken.nft.trade import Trade
+from reinforcement.crypto.time_series.kraken_202406_ws.nft.market import Market
+from reinforcement.crypto.time_series.kraken_202406_ws.nft.trade import Trade
 
 __all__ = [
     "Market",

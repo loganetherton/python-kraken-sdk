@@ -15,9 +15,9 @@ from asyncio import sleep as async_sleep
 from copy import deepcopy
 from typing import TYPE_CHECKING, TypeVar
 
-from kraken.base_api import FuturesAsyncClient
-from kraken.exceptions import KrakenAuthenticationError
-from kraken.futures.websocket import ConnectFuturesWebsocket
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import FuturesAsyncClient
+from reinforcement.crypto.time_series.kraken_202406_ws.exceptions import KrakenAuthenticationError
+from reinforcement.crypto.time_series.kraken_202406_ws.futures.websocket import ConnectFuturesWebsocket
 
 if TYPE_CHECKING:
     from collections.abc import Callable
@@ -52,7 +52,7 @@ class FuturesWSClient(FuturesAsyncClient):
         :caption: Futures Websocket: Create the websocket client
 
         import asyncio
-        from kraken.futures import FuturesWSClient
+        from reinforcement.crypto.time_series.kraken_202406_ws.futures import FuturesWSClient
 
         # Create the custom client
         class Client(FuturesWSClient):
@@ -91,7 +91,7 @@ class FuturesWSClient(FuturesAsyncClient):
         :caption: Futures Websocket: Create the websocket client as context manager
 
         import asyncio
-        from kraken.futures import FuturesWSClient
+        from reinforcement.crypto.time_series.kraken_202406_ws.futures import FuturesWSClient
 
         async def on_message(message):
             print(message)
@@ -231,7 +231,7 @@ class FuturesWSClient(FuturesAsyncClient):
             :linenos:
             :caption: Futures Websocket: Subscribe to a feed
 
-            >>> await bot.subscribe(feed='ticker', products=["XBTUSD", "DOT/EUR"])
+                    await bot.subscribe(feed='ticker', products=["XBTUSD", "DOT/EUR"])
 
         Success or failures are sent over the websocket connection and can be
         received via the default
@@ -290,7 +290,7 @@ class FuturesWSClient(FuturesAsyncClient):
             :linenos:
             :caption: Futures Websocket: Unsubscribe from a feed
 
-            >>> await bot.unsubscribe(feed='ticker', products=["XBTUSD", "DOT/EUR"])
+                    await bot.unsubscribe(feed='ticker', products=["XBTUSD", "DOT/EUR"])
 
         Success or failures are sent over the websocket connection and can be
         received via the default
@@ -336,8 +336,8 @@ class FuturesWSClient(FuturesAsyncClient):
             :linenos:
             :caption: Futures Websocket: Get the available public subscription feeds
 
-            >>> from kraken.futures import FuturesWSClient
-            >>> FuturesWSClient.get_available_private_subscription_feeds()
+                    from reinforcement.crypto.time_series.kraken_202406_ws.futures import FuturesWSClient
+                    FuturesWSClient.get_available_private_subscription_feeds()
             [
                 "trade", "book", "ticker",
                 "ticker_lite", "heartbeat"
@@ -358,8 +358,8 @@ class FuturesWSClient(FuturesAsyncClient):
             :linenos:
             :caption: Futures Websocket: Get the available private subscription feeds
 
-            >>> from kraken.futures import FuturesWSClient
-            >>> FuturesWSClient.get_available_private_subscription_feeds()
+                    from reinforcement.crypto.time_series.kraken_202406_ws.futures import FuturesWSClient
+                    FuturesWSClient.get_available_private_subscription_feeds()
             [
                 "fills", "open_positions", "open_orders",
                 "open_orders_verbose", "balances",
@@ -391,8 +391,8 @@ class FuturesWSClient(FuturesAsyncClient):
             :linenos:
             :caption: Futures Websocket: Check if the credentials are set
 
-            >>> from kraken.futures import FuturesWSClient
-            >>> FuturesWSClient().is_auth()
+                    from reinforcement.crypto.time_series.kraken_202406_ws.futures import FuturesWSClient
+                    FuturesWSClient().is_auth()
             False
         """
         return bool(self._key and self._secret)
@@ -412,9 +412,9 @@ class FuturesWSClient(FuturesAsyncClient):
             :linenos:
             :caption: Futures Websocket: Get the active subscriptions
 
-            >>> from kraken.futures import FuturesWSClient
+                    from reinforcement.crypto.time_series.kraken_202406_ws.futures import FuturesWSClient
             ...
-            >>> FuturesWSClient.get_active_subscriptions()
+                    FuturesWSClient.get_active_subscriptions()
             [
                 {
                     "event": "subscribe",

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import TypeVar
 
-from kraken.base_api import SpotClient, defined
+from reinforcement.crypto.time_series.kraken_202406_ws.base_api import SpotClient, defined
 
 Self = TypeVar("Self")
 
@@ -36,7 +36,7 @@ class Earn(SpotClient):
         :linenos:
         :caption: Spot Earn: Create the Earn client
 
-        >>> from kraken.spot import Earn
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Earn
         >>> earn = Earn() # unauthenticated
         >>> auth_earn = Earn(key="api-key", secret="secret-key") # authenticated
 
@@ -44,7 +44,7 @@ class Earn(SpotClient):
         :linenos:
         :caption: Spot Earn: Create the earn client as context manager
 
-        >>> from kraken.spot import Earn
+        >>> from reinforcement.crypto.time_series.kraken_202406_ws.spot import Earn
         >>> with Earn(key="api-key", secret="secret-key") as earn:
         ...     print(earn.stake_asset(asset="XLM", amount=200, method="Lumen Staked"))
     """
@@ -86,7 +86,7 @@ class Earn(SpotClient):
             :linenos:
             :caption: Spot Earn: Allocate funds
 
-            >>> from kraken.earn import Earn
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.earn import Earn
             >>> earn = Earn(key="api-key", secret="secret-key")
             >>> earn.allocate_earn_funds(
             ...     amount=2000,
@@ -128,7 +128,7 @@ class Earn(SpotClient):
             :linenos:
             :caption: Spot Earn: Deallocate funds
 
-            >>> from kraken.earn import Earn
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.earn import Earn
             >>> earn = Earn(key="api-key", secret="secret-key")
             >>> earn.deallocate_earn_funds(
             ...     amount=2000,
@@ -167,7 +167,7 @@ class Earn(SpotClient):
             :linenos:
             :caption: Spot Earn: Allocation Status
 
-            >>> from kraken.earn import Earn
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.earn import Earn
             >>> earn = Earn(key="api-key", secret="secret-key")
             >>> earn.get_allocation_status(
             ...     strategy_id="ESRFUO3-Q62XD-WIOIL7"
@@ -204,7 +204,7 @@ class Earn(SpotClient):
             :linenos:
             :caption: Spot Earn: Deallocation Status
 
-            >>> from kraken.earn import Earn
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.earn import Earn
             >>> earn = Earn(key="api-key", secret="secret-key")
             >>> earn.get_deallocation_status(
             ...     strategy_id="ESRFUO3-Q62XD-WIOIL7"
@@ -256,7 +256,7 @@ class Earn(SpotClient):
             :linenos:
             :caption: Spot Earn: List Earn Strategies
 
-            >>> from kraken.earn import Earn
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.earn import Earn
             >>> earn = Earn(key="api-key", secret="secret-key")
             >>> earn.list_earn_strategies(asset="DOT")
             {
@@ -354,7 +354,7 @@ class Earn(SpotClient):
             :linenos:
             :caption: Spot Earn: List Earn Allocations
 
-            >>> from kraken.earn import Earn
+            >>> from reinforcement.crypto.time_series.kraken_202406_ws.earn import Earn
             >>> earn = Earn(key="api-key", secret="secret-key")
             >>> earn.list_earn_allocations(asset="DOT")
             {
